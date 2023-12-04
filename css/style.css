@@ -1,0 +1,27 @@
+/* 
+body{
+    overflow-y: hidden;
+} */
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img[alt="logo"] {
+    width: 5rem;
+}
+
+body{
+    background-color: #051622;
+    color: beige;
+}
+hr{
+    color: #deb992;
+    border-width: 100%;
+} 
+/* main{
+    height: 800px;
+} */
+
