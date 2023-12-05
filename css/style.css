@@ -8,6 +8,11 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+.navbar{
+    font-weight: bold;
+    color: #deb992;
+    
+}
 
 img[alt="logo"] {
     width: 5rem;
@@ -17,20 +22,39 @@ body {
     background-color: #051622;
     color: beige;
 }
+.card{
+    width: 18rem;
+    background-color: #0b3654;
+    color: #deb992;
+}
+.btn{
+    background-color: #0b3654;
+    color: #deb992;
+}
+.row {
+    margin-block: .5rem;
+}
 hr{
     color: #deb992;
-    border-width: 100%;
+    width: 100%;
+
 } 
 h1{
     text-align: center;
+    color: #deb992;
+
 }
 span{
     text-align: center;
+
 }
 .img1 {
    /* align-items: center;
    justify-content: center; */
    width: 500px;
    margin-left: 34%;
+}
+p{
+    color: #deb992;
 }
 
