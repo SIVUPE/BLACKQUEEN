@@ -1,7 +1,7 @@
-/* 
+
 body{
-    overflow-y: hidden;
-} */
+    overflow-x: hidden;
+}
 *::before,
 *::after{
     margin: 0;
@@ -13,7 +13,7 @@ img[alt="logo"] {
     width: 5rem;
 }
 
-body{
+body {
     background-color: #051622;
     color: beige;
 }
@@ -21,7 +21,16 @@ hr{
     color: #deb992;
     border-width: 100%;
 } 
-/* main{
-    height: 800px;
-} */
+h1{
+    text-align: center;
+}
+span{
+    text-align: center;
+}
+.img1 {
+   /* align-items: center;
+   justify-content: center; */
+   width: 500px;
+   margin-left: 34%;
+}
 
