@@ -29,7 +29,7 @@ let products = JSON.parse(localStorage.getItem('products')) ?
             },
             {
                 "id": 5,
-                "name": "Exta-Virgin-Coconut-Oil",
+                "name": "Extra-Virgin-Coconut-Oil",
                 "amount": 750,
                 "image" :"https://i.postimg.cc/7LWTfWm9/Sunny-Isle-Organic-Organic-Exta-Virgin-Coconut-Oil-4-Oz-with-applicator-11971-removebg-preview.pngg"
             },
@@ -37,10 +37,10 @@ let products = JSON.parse(localStorage.getItem('products')) ?
         
 
 let productsWrapper = document.querySelector('[data-products]')
-
+//function
 function displayProduct(prododo=null) {
     productsWrapper.innerHTML = ""
-    prododo = prododo ? prododo : products;
+    prododo = prododo != null ? prododo : products;
     console.log(prododo)
     prododo.forEach((product) => {
         productsWrapper.innerHTML += `
@@ -49,29 +49,18 @@ function displayProduct(prododo=null) {
               <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">Amount: R${product.amount}</p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+                <button class="btn" onclick= Add To Cart(${JSON.stringify(product)})>Add To Cart</button>
               </div>
             </div> 
             `;
       });
 }
-displayProduct()
+displayProduct() 
 
-//   let sorting = document.querySelector('[data-sorting]')
-//   sorting.addEventListener('click',()=>{
-//     try{
-//         let sortedproducts = products.sort((arg1,arg2)=>{
-//             return arg1.amount - arg2.amount
-//         })
-//         displayProduct(sortedproducts)
-//     }catch(e){
-
-//     }
-//   })
 
 
 //sorting
-let sorting = document.querySelector('[data-products-sort]');
+let sorting = document.querySelector('[ data-products-sort');
 sorting.addEventListener('click', () => {
     try {
         let sortedProducts = products.sort((arg1, arg2) => {
@@ -102,7 +91,7 @@ search.addEventListener('keyup',() => {
                 <div class="card-body">
                   <h5 class="card-title">${product.name}</h5>
                   <p class="card-text">Amount: R${product.amount}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                  <button class="btn")>Add To Cart</button>
                 </div>
               </div> 
               `;
@@ -116,7 +105,15 @@ search.addEventListener('keyup',() => {
     }
 });
 
+//ADD TO CART
 
+let Cart = []
+function AddtoCart(item){
+    console.log();
+    if(Cart)
+    Cart.push(item)
+localStorage.setItem('Cart',JSON.stringify(cart))
+}
 
 
 
