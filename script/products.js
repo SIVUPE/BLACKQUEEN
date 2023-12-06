@@ -49,7 +49,7 @@ function displayProduct(prododo=null) {
               <div class="card-body">
                 <h5 class="card-title">${product.name}</h5>
                 <p class="card-text">Amount: R${product.amount}</p>
-                <button class="btn" onclick= Add To Cart(${JSON.stringify(product)})>Add To Cart</button>
+                <button class="btn" onclick='addToCart(${JSON.stringify(product)})'>Add To Cart</button>
               </div>
             </div> 
             `;
@@ -108,11 +108,11 @@ search.addEventListener('keyup',() => {
 //ADD TO CART
 
 let Cart = []
-function AddtoCart(item){
-    console.log();
-    if(Cart)
-    Cart.push(item)
-localStorage.setItem('Cart',JSON.stringify(cart))
+function addToCart(item){
+    if(item){
+        Cart.push(item)
+        localStorage.setItem('Cart',JSON.stringify(Cart))
+    }
 }
 
 
