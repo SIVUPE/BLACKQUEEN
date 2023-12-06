@@ -38,9 +38,11 @@ let products = JSON.parse(localStorage.getItem('products')) ?
 
 let productsWrapper = document.querySelector('[data-products]')
 
-function displayProduct() {
+function displayProduct(prododo=null) {
     productsWrapper.innerHTML = ""
-    products.forEach((product) => {
+    prododo = prododo ? prododo : products;
+    console.log(prododo)
+    prododo.forEach((product) => {
         productsWrapper.innerHTML += `
             <div class="card">
               <img src="${product.image}" class="card-img-top" alt="...">
@@ -49,21 +51,76 @@ function displayProduct() {
                 <p class="card-text">Amount: R${product.amount}</p>
                 <a href="#" class="btn btn-primary">Add to Cart</a>
               </div>
-            </div>
+            </div> 
             `;
       });
 }
 displayProduct()
-// Localstorage
-// Products page - sample data on an array saved in local storage
-//     JSON.parse(localStorage.getItem("products")) ?
-//     localStorage.setItem( 
-//         "products")
-//         JSON.stringify( )
-// let productsWrapper = document.querySelector("[data-products]");
-// productsWrapper.innerHTML = ""; // Fixed typo: innerHtml to innerHTML
-// if (Products) {
-  // Loop through products array
+
+//   let sorting = document.querySelector('[data-sorting]')
+//   sorting.addEventListener('click',()=>{
+//     try{
+//         let sortedproducts = products.sort((arg1,arg2)=>{
+//             return arg1.amount - arg2.amount
+//         })
+//         displayProduct(sortedproducts)
+//     }catch(e){
+
+//     }
+//   })
+
+
+//sorting
+let sorting = document.querySelector('[data-products-sort]');
+sorting.addEventListener('click', () => {
+    try {
+        let sortedProducts = products.sort((arg1, arg2) => {
+            return arg1.amount - arg2.amount;
+        });
+        displayProduct(sortedProducts);
+    } catch (e) {
+        console.error(e);
+    }
+});
+
+
+
+//search
+let search = document.querySelector('[data-search-product]')
+search.addEventListener('keyup',() => {
+    try {
+        let searchValue = search.value; 
+        let productFound = products.filter(product => {
+            return product.name.toLowerCase().includes(searchValue.toLowerCase());
+        });
+
+        if (productFound.length > 0) { 
+            productsWrapper.innerHTML="";
+            productFound.forEach(product =>{
+                productsWrapper.innerHTML +=`<div class="card">
+                <img src="${product.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${product.name}</h5>
+                  <p class="card-text">Amount: R${product.amount}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div> 
+              `;
+            });
+            // displayProduct(productFound);
+        } else {
+            productsWrapper.innerHTML = "Products not found";
+        }
+    } catch (e) {
+        console.error(e);
+    }
+});
+
+
+
+
+
+
   
 
 
