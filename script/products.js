@@ -107,7 +107,7 @@ search.addEventListener('keyup',() => {
 
 //ADD TO CART
 
-let Cart = []
+let Cart = JSON.parse(localStorage.getItem('Cart')) || []
 function addToCart(item){
     if(item){
         Cart.push(item)
