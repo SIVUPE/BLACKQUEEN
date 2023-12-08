@@ -76,86 +76,58 @@ p{
 }
 
 
-/* .row {
-    display: -ms-flexbox; 
-    display: flex;
-    -ms-flex-wrap: wrap; 
-    flex-wrap: wrap;
-    margin: 0 -16px;
-  }
-  
-  .col-25 {
-    -ms-flex: 25%;
-    flex: 25%;
-    background-color: #0b3654;
-    margin-bottom: 50%;
-  }
-  
-  .col-50 {
-    -ms-flex: 50%; 
-    flex: 50%;
-    background-color: #0b3654;
-  }
-  
-  .col-75 {
-    -ms-flex: 75%; 
-    flex: 75%;
-  }
-  
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 16px;
-  }
-  
-  .container {
-    background-color: #0b3654;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid #145888;
-    border-radius: 3px;
-  }
-  
-  input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #145888;
-    border-radius: 3px;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
-  
-  .icon-container {
-    margin-bottom: 20px;
-    padding: 7px 0;
-    font-size: 24px;
-  }
-  
-  .btn {
-    background-color: #145888;
-    color: #deb992;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    width: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 17px;
-  }
-  
-  .btn:hover {
-    background-color: #0b3654;
-  }
-  
-  a {
-    color: #2196F3;
-  }
-  
-  span.price {
-    float: right;
-    color: grey;
 
-  } */
+
+body {
+     background: #051622
+}
+
+form {
+     max-width:420px; margin:50px auto; 
+}
+
+.input {
+  color:#deb992;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #0b3654;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+input:focus {
+     border:2px solid #0b3654; 
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#145888;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color: #deb992;;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover {
+     background:#0b3654;
+}
